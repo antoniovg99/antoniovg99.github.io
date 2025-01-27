@@ -1,55 +1,223 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antoni Villarraso Gomez</title>
+    <title>Curso de ChatGPT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            transition: background-color 0.3s ease;
+        }
 
+        /* Animación para el menú */
+        .nav-bg {
+            background: linear-gradient(90deg, #1f1f1f, #3a3a3a);
+            animation: gradientMove 6s infinite alternate;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .btn-main {
+            background-color: #444444;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: #888888;
+            transform: translateY(-3px);
+        }
+
+        .text-color1 {
+            color: #ffffff;
+        }
+
+        .text-color2 {
+            color: #00ff99;
+        }
+
+        .text-color5 {
+            color: #f2f2f2;
+        }
+
+        .bg-color3 {
+            background-color: #1d1d1d;
+        }
+
+        .bg-color4 {
+            background-color: #333333;
+        }
+
+        .bg-color5 {
+            background-color: #282828;
+        }
+
+        .circuit-pattern {
+            background-image: url('circuit-pattern.png');
+            background-size: cover;
+        }
+
+        .binary-code {
+            font-family: "Courier New", Courier, monospace;
+            color: #00ff00;
+        }
+
+        /* Animación de los contenidos */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efecto parallax */
+        .parallax {
+            background: url('parallax-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            position: relative;
+            z-index: -1;
+        }
+    </style>
 </head>
-<body>
 
-    <header>
-        <h1>Antoni Villarraso Gomez</h1>
-        <p>Bienvenido a mi página personal</p>
+<body class="bg-color3 text-gray-100">
+    <!-- Navigation -->
+    <nav class="nav-bg text-color5 py-6 px-6 shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="flex items-center space-x-3">
+                <img src="tape-solid.svg" alt="Logo" class="w-12 h-12 rounded-full transition-transform duration-300 transform hover:scale-110">
+                <span class="text-2xl font-bold text-color1">Curso ChatGPT</span>
+            </div>
+            <ul class="flex space-x-6 text-lg">
+                <li><a href="#" class="hover:text-color2 transition duration-300">Inicio</a></li>
+                <li><a href="#aprendizaje" class="hover:text-color2 transition duration-300">¿Qué aprenderás?</a></li>
+                <li><a href="#instructor" class="hover:text-color2 transition duration-300">Instructor</a></li>
+                <li><a href="#temario" class="hover:text-color2 transition duration-300">Temario</a></li>
+                <li><a href="#faq" class="hover:text-color2 transition duration-300">FAQs</a></li>
+                <li><a href="#precio" class="hover:text-color2 transition duration-300">Precio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Spacer for sticky navigation -->
+    <div class="h-20"></div>
+
+    <!-- Header with Parallax effect -->
+    <header class="parallax py-10 text-center">
+        <div class="bg-black bg-opacity-50 py-16">
+            <h1 class="text-4xl font-bold text-color1">Domina ChatGPT como un Experto 🚀</h1>
+            <p class="mt-4 text-lg text-color5">Aprende a sacarle el máximo provecho al modelo de IA más avanzado.</p>
+            <a href="#precio" target="_blank" class="mt-6 inline-block btn-main">¡Comprar ahora!</a>
+        </div>
     </header>
 
-    <section class="bio">
-        <h2>Sobre mí</h2>
-        <p>Hola, soy Antoni Villarraso Gomez, un apasionado de la tecnología y el desarrollo web. Siempre me ha interesado la forma en que las personas interactúan con la tecnología, y me encanta crear soluciones digitales que hagan la vida más fácil y eficiente.</p>
+    <!-- Qué vas a aprender -->
+    <section id="aprendizaje" class="py-16 px-6 bg-color5 fade-in">
+        <h2 class="text-3xl font-bold text-center text-color1 mb-8">¿Qué vas a aprender? 📘</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-color3 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <img src="M-5g8ktm6_2000x1500__.jpg" alt="">
+                <h3 class="text-xl font-bold text-color1">Entender ChatGPT</h3>
+                <p class="mt-2 text-center">Descubre cómo funciona esta poderosa herramienta y sus aplicaciones.</p>
+            </div>
+            <div class="bg-color3 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <img src="imagen1.jpg" alt="">
+                <h3 class="text-xl font-bold text-color1">Escribir Prompts Efectivos</h3>
+                <p class="mt-2 text-center">Aprende a redactar instrucciones claras para obtener los mejores resultados.</p>
+            </div>
+            <div class="bg-color3 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <img src="imagen2.jpg" alt="">
+                <h3 class="text-xl font-bold text-color1">Automatización con IA</h3>
+                <p class="mt-2 text-center">Explora cómo ChatGPT puede automatizar tareas y mejorar la productividad.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="skills">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Desarrollo Web (HTML, CSS, JavaScript)</li>
-            <li>Programación Backend (Python, Node.js)</li>
-            <li>Diseño UX/UI</li>
-            <li>Gestión de Proyectos</li>
-            <li>Trabajo en equipo y comunicación</li>
-        </ul>
+    <!-- Quién lo enseña -->
+    <section id="instructor" class="py-16 px-6 bg-color3 fade-in">
+        <div class="md:flex items-center">
+            <div class="md:w-1/2 flex justify-center mb-6 md:mb-0">
+                <img src="pexels-vanessa-garcia-6325949.jpg" alt="Profesor" class="w-40 h-40 rounded-full shadow-lg">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-color1">Tu instructor 🤓</h2>
+                <p class="mt-4 text-lg">Soy un experto en inteligencia artificial con años de experiencia utilizando ChatGPT para negocios, educación y automatización. ¡Déjame guiarte a través de este increíble mundo!</p>
+            </div>
+        </div>
     </section>
 
-    <section class="contact-form">
-        <h2>Contacto</h2>
-        <form>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Temario del curso -->
+    <section id="temario" class="py-16 px-6 bg-color5 fade-in">
+        <h2 class="text-3xl font-bold text-center text-color1 mb-8">Temario del curso ✍️</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-color3 rounded-2xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-color1">Bloque 1: Introducción</h3>
+                <p class="binary-code">01101000 01100101 01101100 01101100 01101111</p>
+            </div>
+            <div class="bg-color3 rounded-2xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-color1">Bloque 2: Creación de Prompts</h3>
+                <p class="binary-code">01010011 01100001 01101100 01110101 01110100</p>
+            </div>
+            <div class="bg-color3 rounded-2xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-color1">Bloque 3: Herramientas de IA</h3>
+                <p class="binary-code">01001001 01000101 01000010 01010100</p>
+            </div>
+        </div>
+    </section>
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+    <!-- Precio -->
+    <section id="precio" class="py-16 px-6 bg-color5 fade-in">
+        <div class="md:flex items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-color1">¡No esperes más! 🎉</h2>
+                <p class="mt-4 text-lg">Accede ahora al curso más completo de ChatGPT y transforma la manera en que trabajas y aprendes.</p>
+            </div>
+            <div class="md:w-1/2 bg-color3 rounded-2xl shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-color1">Precio: $99 USD</h3>
+                <ul class="mt-4 space-y-2">
+                    <li class="flex items-center"><span class="text-green-600 mr-2">✔️</span> Acceso de por vida</li>
+                    <li class="flex items-center"><span class="text-green-600 mr-2">✔️</span> Certificado de finalización</li>
+                    <li class="flex items-center"><span class="text-green-600 mr-2">✔️</span> Garantía de devolución de 7 días</li>
+                </ul>
+                <a href="https://compraejemplo.com" target="_blank" class="mt-6 inline-block btn-main">Comprar ahora</a>
+            </div>
+        </div>
+    </section>
 
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Enviar</button>
+    <!-- Contacto -->
+    <section id="contacto" class="py-16 px-6 bg-color5 fade-in">
+        <h2 class="text-xl font-bold mb-4 text-center text-color1">¿Tienes preguntas? Escríbenos 📧</h2>
+        <form action="mailto:contacto@ejemplo.com" method="post" enctype="text/plain" class="max-w-lg mx-auto bg-color3 rounded-2xl shadow-lg p-6">
+            <div class="mb-4"> <label for="name" class="block text-left font-bold mb-2">Nombre:</label> <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-color1"> </div>
+            <div class="mb-4"> <label for="email" class="block text-left font-bold mb-2">Correo Electrónico:</label> <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-color1"> </div>
+            <div class="mb-4"> <label for="message" class="block text-left font-bold mb-2">Mensaje:</label> <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-color1"></textarea> </div>
+            <button type="submit" class="btn-main">Enviar</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Antoni Villarraso Gomez. Todos los derechos reservados.</p>
-    </footer>
-
 </body>
-</html>
 
+</html>
