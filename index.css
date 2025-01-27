@@ -1,67 +1,182 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #dbecac;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    transition: background-color 0.3s ease;
 }
-header {
-    background-color: #f2a3a3;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+
+
+
+.nav-bg {
+    background: linear-gradient(90deg, #1f1f1f, #3a3a3a);
+    animation: gradientMove 6s infinite alternate;
 }
-header h1 {
-    margin: 0;
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
+
+/* Efecto de resaltar enlaces en el menú */
+.nav-bg a {
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-bg a:hover {
+    color: #00ff99; /* Verde tecnológico */
+    transform: scale(1.1);
+}
+
+.nav-bg a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00ff99;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-bg a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Efecto de resaltar texto en el cuerpo */
+section p:hover, section h2:hover, section h3:hover {
+    color: #00ff99; /* Cambiar el color a verde */
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+}
+
+section .bg-color3, section .bg-color4, section .bg-color5 {
+    transition: transform 0.3s ease;
+}
+
+section .bg-color3:hover, section .bg-color4:hover, section .bg-color5:hover {
+    transform: translateY(-5px); /* Desplazamiento suave */
+}
+
+/* Transiciones generales */
 section {
-    padding: 20px;
+    transition: transform 0.3s ease;
 }
-section h2 {
-    color: #333;
+
+section:hover {
+    transform: scale(1.02); /* Escalado suave */
 }
-.bio, .skills, .contact-form {
-    margin-top: 20px;
-}
-.bio p, .skills ul {
-    font-size: 18px;
-}
-.skills ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-.skills li {
-    background-color: #f0f0f0;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-}
-.contact-form input, .contact-form textarea {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 10px;
-}
-.contact-form button {
-    background-color: #333;
+
+.btn-main {
+    background-color: #444444;
     color: white;
-    border: none;
     padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.contact-form button:hover {
-    background-color: #555;
+
+.btn-main:hover {
+    background-color: #888888;
+    transform: scale(1.1);
 }
-footer {
-    background-color: #333;
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    transition: background-color 0.3s ease;
+}
+
+/* Animación para el menú */
+.nav-bg {
+    background: linear-gradient(90deg, #1f1f1f, #3a3a3a);
+    animation: gradientMove 6s infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.btn-main {
+    background-color: #444444;
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-main:hover {
+    background-color: #888888;
+    transform: translateY(-3px);
+}
+
+.text-color1 {
+    color: #ffffff;
+}
+
+.text-color2 {
+    color: #00ff99;
+}
+
+.text-color5 {
+    color: #f2f2f2;
+}
+
+.bg-color3 {
+    background-color: #1d1d1d;
+}
+
+.bg-color4 {
+    background-color: #333333;
+}
+
+.bg-color5 {
+    background-color: #282828;
+}
+
+.circuit-pattern {
+    background-image: url('circuit-pattern.png');
+    background-size: cover;
+}
+
+.binary-code {
+    font-family: "Courier New", Courier, monospace;
+    color: #00ff00;
+}
+
+/* Animación de los contenidos */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto parallax */
+.parallax {
+    background: url('parallax-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    z-index: -1;
 }
